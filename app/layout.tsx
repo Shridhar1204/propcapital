@@ -15,9 +15,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PropCapital — Real estate, reimagined",
+  title: "PropCapital — Delhi NCR Property Discovery & Services",
   description:
-    "PropCapital is a considered way to discover property, with IRA as an AI property assistant. This page is a design preview with sample photography.",
+    "Explore residential and commercial property services across Delhi, Gurugram, Noida and Faridabad, including buyer guidance, NRI services and owner support.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

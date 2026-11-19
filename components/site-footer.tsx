@@ -21,14 +21,14 @@ export function SiteFooter() {
           ))}
         </nav>
         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-ash">
-          Discovery / Context / Care
+          Delhi / Gurugram / Noida / Faridabad
         </p>
       </div>
       <div className={`${shell} border-t border-ink/10 py-4`}>
         <p className="text-xs leading-5 text-ash">
-          Sample photography throughout, including images from Unsplash. Not
-          current listings. No prices, names, or performance claims are shown
-          until real property information is supplied.
+          Images are illustrative and are not current property listings. This
+          page has no live listings, connected IRA assistant, interactive
+          financial calculators or enquiry channel.
         </p>
       </div>
     </footer>

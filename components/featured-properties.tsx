@@ -4,14 +4,14 @@ import { useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { kicker, sampleProperties, shell } from "@/lib/content";
+import { kicker, marketAreas, marketHighlights, shell } from "@/lib/content";
 
 export function FeaturedProperties() {
   const [index, setIndex] = useState(0);
   const reduce = useReducedMotion();
   const tabs = useRef<Array<HTMLButtonElement | null>>([]);
-  const active = sampleProperties[index];
-  const count = sampleProperties.length;
+  const active = marketHighlights[index];
+  const count = marketHighlights.length;
 
   function select(next: number, focus = false) {
     const wrapped = (next + count) % count;
@@ -37,51 +37,52 @@ export function FeaturedProperties() {
       <div className={shell}>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className={kicker}>Featured</p>
+            <p className={kicker}>Delhi NCR</p>
             <h2
               id="properties-title"
               className="display mt-4 text-[clamp(2.5rem,4.4vw,4.4rem)] text-ink"
             >
-              Sample
+              Markets
               <br />
-              properties
+              in focus
             </h2>
           </div>
           <p className="max-w-xs text-sm leading-6 text-ash">
-            Placeholders only. Names, locations, and prices stay blank until
-            real property information is supplied.
+            Property search and advisory across Delhi, Gurugram, Noida and
+            Faridabad. The imagery is illustrative; no live listings are shown.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-12 lg:gap-8">
           <div
             role="tablist"
-            aria-label="Sample properties"
+            aria-label="Delhi NCR markets"
             className="flex gap-5 lg:col-span-1 lg:flex-col lg:gap-4 lg:pt-2"
           >
-            {sampleProperties.map((property, propertyIndex) => {
-              const selected = propertyIndex === index;
+            {marketHighlights.map((market, marketIndex) => {
+              const selected = marketIndex === index;
               return (
                 <button
-                  key={property.id}
+                  key={market.id}
                   ref={(node) => {
-                    tabs.current[propertyIndex] = node;
+                    tabs.current[marketIndex] = node;
                   }}
-                  id={`property-tab-${property.id}`}
+                  id={`market-tab-${market.id}`}
                   type="button"
                   role="tab"
                   aria-selected={selected}
-                  aria-controls="property-panel"
+                  aria-controls="market-panel"
+                  aria-label={`Explore ${market.name}`}
                   tabIndex={selected ? 0 : -1}
-                  onClick={() => select(propertyIndex)}
-                  onKeyDown={(event) => onTabKey(event, propertyIndex)}
+                  onClick={() => select(marketIndex)}
+                  onKeyDown={(event) => onTabKey(event, marketIndex)}
                   className={`w-fit border-b pb-1 font-serif text-sm tracking-[0.14em] transition-colors ${
                     selected
                       ? "border-coral text-ink"
                       : "border-transparent text-ash hover:text-ink"
                   }`}
                 >
-                  {property.id}
+                  0{marketIndex + 1}
                 </button>
               );
             })}
@@ -89,9 +90,9 @@ export function FeaturedProperties() {
 
           <div className="lg:col-span-7">
             <div
-              id="property-panel"
+              id="market-panel"
               role="tabpanel"
-              aria-labelledby={`property-tab-${active.id}`}
+              aria-labelledby={`market-tab-${active.id}`}
               className="relative aspect-[16/11] overflow-hidden bg-[#e4dfd4]"
             >
               <AnimatePresence mode="wait">
@@ -114,57 +115,54 @@ export function FeaturedProperties() {
                 </motion.div>
               </AnimatePresence>
               <p className="absolute left-4 top-4 bg-ivory px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-ink">
-                Sample — not a listing
+                Illustrative imagery
               </p>
             </div>
             <p className={`${kicker} mt-3`}>
-              Sample photography · {active.id} of {String(count).padStart(2, "0")}
+              {active.name} · illustrative imagery · {String(index + 1).padStart(2, "0")} of {String(count).padStart(2, "0")}
             </p>
           </div>
 
           <div className="flex flex-col lg:col-span-4 lg:pl-2">
-            <p className={kicker}>Sample listing</p>
+            <p className={kicker}>Delhi NCR market</p>
             <h3 className="display mt-4 text-[clamp(2.6rem,3.6vw,3.8rem)] text-ink">
-              Sample
-              <br />
-              residence
+              {active.name}
             </h3>
             <p className={`${kicker} mt-4 text-ink`}>
-              {active.id} — Location pending
+              Residential and commercial property
             </p>
             <p className="mt-6 max-w-sm text-sm leading-6 text-ash">
-              A placeholder composition. The photograph is sample imagery.
-              Name, place, size, and price will replace this note when a real
-              listing is provided.
+              {active.summary} No property shown here is a listing, and
+              availability, pricing and project details are not provided.
             </p>
 
             <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-ink/10 pt-6">
               <div>
-                <dt className={kicker}>Status</dt>
-                <dd className="mt-2 font-serif text-2xl text-ink">Sample</dd>
+                <dt className={kicker}>Area</dt>
+                <dd className="mt-2 font-serif text-2xl text-ink">NCR</dd>
               </div>
               <div>
-                <dt className={kicker}>Name</dt>
-                <dd className="mt-2 font-serif text-2xl text-ink">Pending</dd>
+                <dt className={kicker}>Focus</dt>
+                <dd className="mt-2 font-serif text-2xl text-ink">Homes</dd>
               </div>
               <div>
-                <dt className={kicker}>Place</dt>
-                <dd className="mt-2 font-serif text-2xl text-ink">Pending</dd>
+                <dt className={kicker}>Also</dt>
+                <dd className="mt-2 font-serif text-2xl text-ink">Work</dd>
               </div>
             </dl>
 
-            <div className="mt-10 flex items-center justify-between gap-4 lg:mt-auto lg:pt-12">
+            <div className="mt-8 flex items-center justify-between gap-4">
               <a
-                href="#contact"
+                href="#services"
                 className="text-[11px] font-medium uppercase tracking-[0.16em] text-ink underline decoration-ink/25 underline-offset-4 transition-colors hover:decoration-ink"
               >
-                Enquire about this sample
+                Explore services
               </a>
               <button
                 type="button"
                 onClick={() => select(index + 1)}
                 className="grid size-16 shrink-0 place-items-center rounded-full bg-coral text-ivory transition-colors hover:bg-[#d94332]"
-                aria-label="Show the next sample property"
+                aria-label="Show the next Delhi NCR market"
               >
                 <ArrowRight className="size-5" strokeWidth={1.5} />
               </button>
@@ -172,49 +170,18 @@ export function FeaturedProperties() {
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {sampleProperties.slice(0, 3).map((property) => {
-            const propertyIndex = sampleProperties.findIndex((item) => item.id === property.id);
-            const selected = propertyIndex === index;
-            return (
-              <button
-                key={property.id}
-                type="button"
-                onClick={() => select(propertyIndex)}
-                className={`group relative aspect-[4/3] overflow-hidden text-left ${
-                  selected ? "ring-1 ring-inset ring-ink" : ""
-                }`}
-                aria-label={`Show sample ${property.id}`}
+        <div className="mt-8 border-t border-ink/10 pt-5">
+          <p className={kicker}>Delhi NCR coverage</p>
+          <ul className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+            {marketAreas.map((area) => (
+              <li
+                key={area}
+                className="border-b border-ink/15 pb-3 font-serif text-2xl text-ink"
               >
-                <Image
-                  src={property.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 768px) 22vw, 45vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                  style={{ objectPosition: property.position }}
-                />
-                <span className="absolute bottom-3 left-3 bg-ivory px-2 py-1 text-[10px] font-medium uppercase tracking-[0.16em] text-ink">
-                  {property.id}
-                </span>
-              </button>
-            );
-          })}
-          <button
-            type="button"
-            onClick={() => select(index + 1)}
-            className="flex min-h-36 flex-col justify-between bg-ink p-5 text-left text-ivory"
-          >
-            <span className="text-[11px] font-medium uppercase leading-5 tracking-[0.18em]">
-              Sample
-              <br />
-              only
-            </span>
-            <span className="inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em]">
-              Next sample
-              <ArrowRight className="size-4" strokeWidth={1.5} />
-            </span>
-          </button>
+                {area}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -62,7 +62,7 @@ export function SiteHeader() {
             href="#contact"
             className="group inline-flex h-10 items-center gap-2 rounded-full bg-coral px-5 text-[11px] font-medium uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-[#d94332]"
           >
-            Enquire
+            Contact
             <ArrowUpRight
               className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               strokeWidth={1.5}
@@ -76,7 +76,7 @@ export function SiteHeader() {
             className="inline-flex h-10 items-center rounded-full bg-coral px-4 text-[11px] font-medium uppercase tracking-[0.14em] text-ivory"
             onClick={() => setOpen(false)}
           >
-            Enquire
+            Contact
           </a>
           <button
             type="button"
@@ -115,7 +115,7 @@ export function SiteHeader() {
             className="mt-auto inline-flex h-12 w-fit items-center gap-2 rounded-full bg-coral px-6 text-[11px] font-medium uppercase tracking-[0.16em] text-ivory"
             onClick={() => setOpen(false)}
           >
-            Enquire
+            Contact
             <ArrowUpRight className="size-4" strokeWidth={1.5} />
           </a>
         </nav>

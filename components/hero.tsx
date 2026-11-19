@@ -22,16 +22,16 @@ export function Hero() {
             </h1>
             <Reveal immediate delay={0.28}>
               <p className="mt-8 max-w-sm text-[15px] leading-7 text-ash">
-                PropCapital is a considered way to discover property — homes
-                presented with room to read them, and IRA beside you when you
-                want to think before you enquire.
+                Residential and commercial property discovery across Delhi NCR,
+                with personalised guidance for buyers, investors, NRI clients
+                and property owners.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <a
                   href="#properties"
                   className="group inline-flex h-12 items-center gap-3 rounded-full bg-coral px-6 text-[11px] font-medium uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-[#d94332]"
                 >
-                  Explore properties
+                  Explore markets
                   <ArrowRight
                     className="size-4 transition-transform duration-300 group-hover:translate-x-1"
                     strokeWidth={1.5}
@@ -41,7 +41,7 @@ export function Hero() {
                   href="#about"
                   className="group inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.16em] text-ink"
                 >
-                  Discover PropCapital
+                  Discover services
                   <ArrowUpRight
                     className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     strokeWidth={1.5}
@@ -59,7 +59,7 @@ export function Hero() {
           >
             <MediaFrame
               src="/images/hero.jpg"
-              alt="Sample photograph of a modern house with a pool and open living level."
+              alt="Illustrative photograph of a modern home; this is not a PropCapital listing."
               sizes="(min-width: 1024px) 58vw, 100vw"
               className="aspect-[16/11] w-full"
               mode="parallax"
@@ -67,7 +67,7 @@ export function Hero() {
               position="center 45%"
             />
             <div className="mt-3 flex items-start justify-between gap-6">
-              <p className={kicker}>Sample photography</p>
+              <p className={kicker}>Illustrative photography · not a listing</p>
               <p className={`${kicker} text-right`}>
                 Places
                 <br />
@@ -83,12 +83,12 @@ export function Hero() {
           <Reveal className="lg:col-span-5">
             <MediaFrame
               src="/images/light.jpg"
-              alt="Sample photograph of a bright living room opening to a garden."
+              alt="Illustrative photograph of a bright living room; not a current listing."
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="aspect-[16/10] w-full"
               mode="still"
             />
-            <p className={`${kicker} mt-3`}>A calmer way to look</p>
+            <p className={`${kicker} mt-3`}>Residential · commercial · investment</p>
           </Reveal>
 
           <Reveal className="lg:col-span-4 lg:px-4 lg:pb-2" delay={0.08}>
@@ -104,24 +104,24 @@ export function Hero() {
           <Reveal className="grid grid-cols-[1fr_auto] items-stretch gap-4 lg:col-span-3" delay={0.12}>
             <MediaFrame
               src="/images/terrace.jpg"
-              alt="Sample photograph of a dark house glowing at dusk."
+              alt="Illustrative photograph of a home at dusk; not a current listing."
               sizes="(min-width: 1024px) 18vw, 70vw"
               className="aspect-[4/5] w-full"
               mode="still"
               position="center"
             />
             <p className={`${kicker} flex flex-col justify-between py-1`}>
-              <span>Light</span>
-              <span>Space</span>
-              <span>Judgment</span>
+              <span>Delhi</span>
+              <span>Gurugram</span>
+              <span>Noida</span>
             </p>
           </Reveal>
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-ink/10 pt-5 text-[10px] font-medium uppercase tracking-[0.2em] text-ash sm:flex-row sm:items-center sm:justify-between">
           <span>PropCapital</span>
-          <span>A more considered way to look</span>
-          <span>Discovery / Context / Care</span>
+          <span>Property, across Delhi NCR</span>
+          <span>Discovery / Guidance / Support</span>
         </div>
       </div>
     </section>

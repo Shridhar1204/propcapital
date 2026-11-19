@@ -41,16 +41,15 @@ export function IraPreview() {
           assistant.
         </h2>
         <p className="mt-8 max-w-md text-[15px] leading-7 text-ash">
-          IRA is PropCapital’s AI property assistant. The brief is simple:
-          help you say what you want, compare it once homes are real, and
-          prepare the next conversation. The panel is the interface. It is
-          not connected to a model.
+          IRA is PropCapital’s AI property consultant concept for
+          personalised, budget- and location-based discovery. This preview is
+          not connected to a live AI model or property listings.
         </p>
         <ol className="mt-10 max-w-md border-t border-ink/10">
           {[
-            "Articulate the qualities of a home.",
-            "Compare listings when they exist.",
-            "Shape an enquiry in your own words.",
+            "Describe your budget, location and property needs.",
+            "Explore residential and commercial options.",
+            "Prepare for a property consultation.",
           ].map((item, index) => (
             <li
               key={item}
@@ -66,7 +65,7 @@ export function IraPreview() {
       <div className="bg-[#e7e2d6] px-4 py-12 sm:px-6 md:px-10 md:py-16 lg:py-24 lg:pr-[max(2.5rem,calc((100vw-1500px)/2+2.5rem))] lg:pl-12 xl:pr-[max(3.5rem,calc((100vw-1500px)/2+3.5rem))]">
         <div className="flex items-baseline justify-between gap-4 border-b border-ink/15 pb-4">
           <p className="font-serif text-2xl tracking-[-0.03em] text-ink">IRA</p>
-          <p className={kicker}>Interface preview</p>
+          <p className={kicker}>Prepared preview · not live</p>
         </div>
 
         <div className="flex min-h-[22rem] flex-col gap-8 py-8" aria-live="polite">
@@ -90,7 +89,7 @@ export function IraPreview() {
         </div>
 
         <div className="border-t border-ink/15 pt-5">
-          <p className={kicker}>Sample prompts</p>
+          <p className={kicker}>Example questions</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {iraPrompts.map((prompt) => {
               const selected = activePrompt === prompt.id;
@@ -112,8 +111,8 @@ export function IraPreview() {
             })}
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-ash">
-            Choosing a prompt shows a prepared reply. Nothing is sent to an
-            assistant.
+            Choosing a prompt shows a prepared reply. Nothing is sent, and no
+            live property search is performed.
           </p>
           <label htmlFor="ira-draft" className="mt-6 block">
             <span className="sr-only">Message to IRA</span>
