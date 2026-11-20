@@ -119,7 +119,7 @@ export function Hero() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-ink/10 pt-5 text-[10px] font-medium uppercase tracking-[0.2em] text-ash sm:flex-row sm:items-center sm:justify-between">
-          <span>PropCapital</span>
+          <span>PropCapital.ai</span>
           <span>Property, across Delhi NCR</span>
           <span>Discovery / Guidance / Support</span>
         </div>

@@ -42,7 +42,7 @@ export function FeaturedProperties() {
               id="properties-title"
               className="display mt-4 text-[clamp(2.5rem,4.4vw,4.4rem)] text-ink"
             >
-              Markets
+              Market
               <br />
               in focus
             </h2>

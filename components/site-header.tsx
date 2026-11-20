@@ -40,7 +40,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[4.5rem] w-full max-w-[1500px] items-center justify-between gap-4 px-4 sm:px-6 lg:h-[5.25rem] lg:px-10 xl:px-14">
         <a href="#top" className="flex min-w-0 items-center gap-4">
           <span className="font-serif text-[1.65rem] leading-none tracking-[-0.03em] text-ink">
-            PropCapital
+            PropCapital.ai
           </span>
           <span className="hidden h-px w-10 bg-ink/25 xl:block" aria-hidden="true" />
           <span className="hidden text-[10px] font-medium uppercase tracking-[0.22em] text-ash xl:block">

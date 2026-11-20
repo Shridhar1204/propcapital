@@ -21,7 +21,7 @@ export function Introduction() {
               <LineReveal lines={["Property, with", "a clearer", "point of view."]} />
             </h2>
             <Reveal delay={0.1}>
-              <p className="mt-8 max-w-md text-[15px] leading-7 text-ash">
+              <p className="mt-5 max-w-md text-[15px] leading-7 text-ash">
                 PropCapital serves first-time homebuyers, luxury buyers,
                 investors, commercial property buyers, NRI clients, owners and
                 referral partners across Delhi, Gurugram, Noida and Faridabad.
